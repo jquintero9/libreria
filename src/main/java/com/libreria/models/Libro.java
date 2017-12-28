@@ -7,10 +7,10 @@ public class Libro {
     private String titulo;
     private int paginas;
     private int ejemplares;
-    private Genero genero;
-    private Autor autor;
+    private Long genero;
+    private Long autor;
 
-    public Libro(Long id, String titulo, int paginas, int ejemplares, Genero genero, Autor autor) {
+    public Libro(Long id, String titulo, int paginas, int ejemplares, Long genero, Long autor) {
         this.id = id;
         this.titulo = titulo;
         this.paginas = paginas;
@@ -19,7 +19,7 @@ public class Libro {
         this.autor = autor;
     }
 
-    public Libro(String titulo, int paginas, int ejemplares, Genero genero, Autor autor) {
+    public Libro(String titulo, int paginas, int ejemplares, Long genero, Long autor) {
         this.titulo = titulo;
         this.paginas = paginas;
         this.ejemplares = ejemplares;
@@ -39,11 +39,11 @@ public class Libro {
         this.ejemplares = ejemplares;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(Long genero) {
         this.genero = genero;
     }
 
-    public void setAutor(Autor autor) {
+    public void setAutor(Long autor) {
         this.autor = autor;
     }
 
@@ -63,11 +63,11 @@ public class Libro {
         return ejemplares;
     }
 
-    public Genero getGenero() {
+    public Long getGenero() {
         return genero;
     }
 
-    public Autor getAutor() {
+    public Long getAutor() {
         return autor;
     }
 

@@ -5,16 +5,16 @@ public class Autor {
     private Long id;
     private String nombres;
     private String apellidos;
-    private Pais pais;
+    private Long pais;
     
-    public Autor(Long id, String nombres, String apellidos, Pais pais) {
+    public Autor(Long id, String nombres, String apellidos, Long pais) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.pais = pais;
     }
     
-    public Autor(String nombres, String apellidos, Pais pais) {
+    public Autor(String nombres, String apellidos, Long pais) {
         id = null;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -33,7 +33,7 @@ public class Autor {
         return apellidos;
     }
 
-    public Pais getPais() {
+    public Long getPais() {
         return pais;
     }
 
@@ -49,7 +49,7 @@ public class Autor {
         this.apellidos = apellidos;
     }
 
-    public void setPais(Pais pais) {
+    public void setPais(Long pais) {
         this.pais = pais;
     }
 
