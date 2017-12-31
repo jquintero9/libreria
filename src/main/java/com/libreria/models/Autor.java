@@ -6,12 +6,14 @@ public class Autor {
     private String nombres;
     private String apellidos;
     private Long pais;
+    private String nombrePais;
     
     public Autor(Long id, String nombres, String apellidos, Long pais) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.pais = pais;
+        nombrePais = "";
     }
     
     public Autor(String nombres, String apellidos, Long pais) {
@@ -19,6 +21,7 @@ public class Autor {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.pais = pais;
+        nombrePais = "";
     }
 
     public Long getId() {
@@ -36,6 +39,10 @@ public class Autor {
     public Long getPais() {
         return pais;
     }
+    
+    public String getNombrePais() {
+        return nombrePais;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -51,6 +58,10 @@ public class Autor {
 
     public void setPais(Long pais) {
         this.pais = pais;
+    }
+    
+    public void setNombrePais(String nombrePais) {
+        this.nombrePais = nombrePais;
     }
 
     @Override

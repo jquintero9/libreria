@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class AutorDAO extends DAO<Autor, Long> {
     
     private final String SQL_CREATE = "INSERT INTO autores(nombres, apellidos, pais) VALUES (?, ?, ?)";
-    private final String SQL_ALL = "SELECT * FROM autores";
+    private final String SQL_ALL = "SELECT a.id AS \"id\", a.nombres AS \"nombres\", a.apellidos AS \"apellidos\", a.pais AS \"pais\", p.nombre AS \"nombre_pais\" FROM autores AS a JOIN paises AS p ON a.pais=p.id ORDER BY a.apellidos";
     private final String SQL_GET = "SELECT * FROM autores WHERE id=?";
     private final String SQL_UPDATE = "UPDATE autores SET nombres=?, apellidos=?, pais=? WHERE id=?";
     private final String SQL_DELETE = "DELETE FROM autores WHERE id=?";
@@ -73,8 +73,10 @@ public class AutorDAO extends DAO<Autor, Long> {
             String nombres = result.getString("nombres");
             String apellidos = result.getString("apellidos");
             Long pais = result.getLong("pais");
+            String nombrePais = result.getString("nombre_pais");
             
             autor = new Autor(id, nombres, apellidos, pais);
+            autor.setNombrePais(nombrePais);
         } catch (SQLException ex) {
             throw new DBException("Ocurrio un error al crear la instancia del Autor." + " | " + ex.getMessage());
         }
