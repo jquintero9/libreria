@@ -13,7 +13,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javax.crypto.Cipher;
 
 public class AutorController implements Initializable {
 
@@ -46,10 +49,22 @@ public class AutorController implements Initializable {
     
     private void onSelectRow() {
         table.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Autor> observable, Autor oldValue, Autor newValue) -> {
-            
             txfNombres.setText(newValue.getNombres());
             txfApellidos.setText(newValue.getApellidos());
         });
+    }
+    
+    @FXML
+    private void editNombres(CellEditEvent ev) {
+        Autor autor = table.getSelectionModel().getSelectedItem();
+        autor.setNombres(ev.getNewValue().toString());
+        txfNombres.setText(ev.getNewValue().toString());
+        try {
+            autorDAO.update(autor);
+        } catch (DBException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
     }
     
     private void initTable() {
@@ -64,6 +79,9 @@ public class AutorController implements Initializable {
         nombresColumn.setCellValueFactory(new PropertyValueFactory("nombres"));
         apellidosColumn.setCellValueFactory(new PropertyValueFactory("apellidos"));
         nacionalidadColumn.setCellValueFactory(new PropertyValueFactory("nombrePais"));
+        
+        nombresColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        
         onSelectRow();
         table.setItems(data);
     }

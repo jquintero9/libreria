@@ -16,13 +16,10 @@
       <Label fx:id="title" layoutX="14.0" layoutY="22.0" styleClass="title" text="Lista de Autores" />
       <TableView fx:id="table" editable="true" layoutX="14.0" layoutY="98.0" prefHeight="480.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="nombresColumn" prefWidth="200.0" text="Nombres" />
+          <TableColumn fx:id="nombresColumn" onEditCommit="#editNombres" prefWidth="200.0" text="Nombres" />
             <TableColumn fx:id="apellidosColumn" prefWidth="200.0" text="Apellidos" />
             <TableColumn fx:id="nacionalidadColumn" prefWidth="200.0" text="Nacionalidad" />
         </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
       </TableView>
       <Pane fx:id="formWrap" layoutX="635.0" layoutY="98.0" prefHeight="480.0" prefWidth="300.0">
          <styleClass>
