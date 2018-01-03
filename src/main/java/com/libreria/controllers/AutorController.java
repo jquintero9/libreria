@@ -16,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javax.crypto.Cipher;
 
 public class AutorController implements Initializable {
 

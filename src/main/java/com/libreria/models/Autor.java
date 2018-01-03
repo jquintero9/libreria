@@ -1,71 +1,73 @@
 package com.libreria.models;
 
+import javafx.beans.property.LongProperty;
+import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Autor {
     
-    private Long id;
-    private String nombres;
-    private String apellidos;
-    private Long pais;
-    private String nombrePais;
+    private LongProperty id;
+    private StringProperty nombres;
+    private StringProperty apellidos;
+    private LongProperty pais;
+    private StringProperty nombrePais;
     
     public Autor(Long id, String nombres, String apellidos, Long pais) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.pais = pais;
-        nombrePais = "";
+        this.id = new SimpleLongProperty(id);
+        this.nombres = new SimpleStringProperty(nombres);
+        this.apellidos = new SimpleStringProperty(apellidos);
+        this.pais = new SimpleLongProperty(pais);
     }
     
     public Autor(String nombres, String apellidos, Long pais) {
-        id = null;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.pais = pais;
-        nombrePais = "";
+        this.nombres = new SimpleStringProperty(nombres);
+        this.apellidos = new SimpleStringProperty(apellidos);
+        this.pais = new SimpleLongProperty(pais);
     }
 
     public Long getId() {
-        return id;
+        return id.get();
     }
 
     public String getNombres() {
-        return nombres;
+        return nombres.get();
     }
 
     public String getApellidos() {
-        return apellidos;
+        return apellidos.get();
     }
 
     public Long getPais() {
-        return pais;
+        return pais.get();
     }
     
     public String getNombrePais() {
-        return nombrePais;
+        return nombrePais.get();
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id = new SimpleLongProperty(id);
     }
 
     public void setNombres(String nombres) {
-        this.nombres = nombres;
+        this.nombres = new SimpleStringProperty(nombres);
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        this.apellidos = new SimpleStringProperty(apellidos);
     }
 
     public void setPais(Long pais) {
-        this.pais = pais;
+        this.pais = new SimpleLongProperty(pais);
     }
     
     public void setNombrePais(String nombrePais) {
-        this.nombrePais = nombrePais;
+        this.nombrePais = new SimpleStringProperty(nombrePais);
     }
 
     @Override
     public String toString() {
-        return "Autor{" + "id=" + id + ", nombres=" + nombres + ", apellidos=" + apellidos + ", pais=" + pais + '}';
+        return "Autor{" + "id=" + getId() + ", nombres=" + getNombres() + ", apellidos=" + getApellidos() + ", pais=" + getNombrePais() + '}';
     }
 }
