@@ -44,6 +44,6 @@ public class Pais {
 
     @Override
     public String toString() {
-        return "Pais{" + "id=" + id + ", cod=" + cod + ", nombre=" + nombre + '}';
-    }    
+        return getNombre();
+    }
 }

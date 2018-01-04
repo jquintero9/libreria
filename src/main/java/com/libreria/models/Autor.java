@@ -18,12 +18,15 @@ public class Autor {
         this.nombres = new SimpleStringProperty(nombres);
         this.apellidos = new SimpleStringProperty(apellidos);
         this.pais = new SimpleLongProperty(pais);
+        this.nombrePais = new SimpleStringProperty();
     }
     
     public Autor(String nombres, String apellidos, Long pais) {
+        this.id = new SimpleLongProperty();
         this.nombres = new SimpleStringProperty(nombres);
         this.apellidos = new SimpleStringProperty(apellidos);
         this.pais = new SimpleLongProperty(pais);
+        this.nombrePais = new SimpleStringProperty();
     }
 
     public Long getId() {
@@ -51,19 +54,19 @@ public class Autor {
     }
 
     public void setNombres(String nombres) {
-        this.nombres = new SimpleStringProperty(nombres);
+        this.nombres.set(nombres);
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = new SimpleStringProperty(apellidos);
+        this.apellidos.set(apellidos);
     }
 
     public void setPais(Long pais) {
-        this.pais = new SimpleLongProperty(pais);
+        this.pais.set(pais);
     }
     
     public void setNombrePais(String nombrePais) {
-        this.nombrePais = new SimpleStringProperty(nombrePais);
+        this.nombrePais.set(nombrePais);
     }
 
     @Override

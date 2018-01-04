@@ -2,7 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -16,9 +16,9 @@
       <Label fx:id="title" layoutX="14.0" layoutY="22.0" styleClass="title" text="Lista de Autores" />
       <TableView fx:id="table" editable="true" layoutX="14.0" layoutY="98.0" prefHeight="480.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="nombresColumn" onEditCommit="#editNombres" prefWidth="200.0" text="Nombres" />
-            <TableColumn fx:id="apellidosColumn" prefWidth="200.0" text="Apellidos" />
-            <TableColumn fx:id="nacionalidadColumn" prefWidth="200.0" text="Nacionalidad" />
+          <TableColumn fx:id="nombresColumn" onEditCommit="#editCells" prefWidth="200.0" text="Nombres" />
+            <TableColumn fx:id="apellidosColumn" onEditCommit="#editCells" prefWidth="200.0" text="Apellidos" />
+            <TableColumn fx:id="nacionalidadColumn" onEditCommit="#editCells" prefWidth="200.0" text="Nacionalidad" />
         </columns>
       </TableView>
       <Pane fx:id="formWrap" layoutX="635.0" layoutY="98.0" prefHeight="480.0" prefWidth="300.0">
@@ -27,13 +27,28 @@
             <String fx:value="white" />
          </styleClass>
          <children>
-            <Label layoutX="14.0" layoutY="19.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nombres" />
-            <TextField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" prefHeight="20.0" prefWidth="280.0" styleClass="input-form" />
-            <Label layoutX="10.0" layoutY="106.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Apellidos" />
-            <TextField fx:id="txfApellidos" layoutX="11.0" layoutY="146.0" prefHeight="20.0" prefWidth="280.0" styleClass="input-form" />
+            <Label layoutX="10.0" layoutY="14.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nombres" />
+            <TextField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" prefHeight="37.0" prefWidth="280.0">
+               <styleClass>
+                  <String fx:value="white" />
+                  <String fx:value="text-field" />
+               </styleClass></TextField>
+            <Label layoutX="11.0" layoutY="107.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Apellidos" />
+            <TextField fx:id="txfApellidos" layoutX="11.0" layoutY="148.0" prefHeight="37.0" prefWidth="280.0">
+               <styleClass>
+                  <String fx:value="white" />
+                  <String fx:value="text-field" />
+               </styleClass></TextField>
             <Label layoutX="11.0" layoutY="220.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nacionalidad" />
-            <ChoiceBox fx:id="slcPais" layoutX="10.0" layoutY="267.0" prefHeight="40.0" prefWidth="280.0" />
-            <Button layoutX="10.0" layoutY="358.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="280.0" text="Guardar" />
+            <Button disable="true" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Guardar" />
+            <ComboBox fx:id="comboBoxPais" layoutX="10.0" layoutY="260.0" prefHeight="37.0" prefWidth="280.0" promptText="Seleccione una opción" visibleRowCount="5">
+               <styleClass>
+                  <String fx:value="combo-box" />
+                  <String fx:value="white" />
+               </styleClass>
+            </ComboBox>
+            <Button fx:id="btnEliminar" disable="true" layoutX="115.0" layoutY="370.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Eliminar" />
+            <Button fx:id="btnNuevo" layoutX="215.0" layoutY="370.0" mnemonicParsing="false" onAction="#resetForm" prefHeight="37.0" prefWidth="71.0" text="Nuevo" />
          </children>
       </Pane>
       <Separator layoutX="615.0" layoutY="98.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="19.0" />

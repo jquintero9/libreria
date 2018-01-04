@@ -80,4 +80,14 @@
     -fx-text-fill: #555;
 }
 
+.combo-box {
+    -fx-border-color: #444;
+    -fx-font: 16px "Segoe UI";
+}
+
+.text-field {
+    -fx-border-color: #444;
+    -fx-font: 16px "Segoe UI";
+}
+
 
