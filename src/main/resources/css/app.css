@@ -90,4 +90,13 @@
     -fx-font: 16px "Segoe UI";
 }
 
+.table {
+    -fx-border-width: 0;
+}
+
+.message-input {
+    -fx-font: 10px "Segoe UI";
+    -fx-text-fill: red;
+}
+
 

@@ -68,6 +68,10 @@ public class Autor {
     public void setNombrePais(String nombrePais) {
         this.nombrePais.set(nombrePais);
     }
+    
+    public String getFullName() {
+        return getNombres() + " " + getApellidos();
+    }
 
     @Override
     public String toString() {
