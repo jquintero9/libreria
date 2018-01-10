@@ -117,15 +117,6 @@ public class AutorController implements Initializable {
     }
     
     @FXML
-    private void validateTextInputs(KeyEvent ev) {
-        validate();
-    }
-    
-    @FXML
-    private void validateSelect(ActionEvent ev) {
-       validate();
-    }
-    
     private void validate() {
          if (txfNombres.isValid() && txfApellidos.isValid() && comboBoxPais.getValue() != null) {
             btnGuardar.setDisable(false);
@@ -259,7 +250,7 @@ public class AutorController implements Initializable {
         
         comboBoxPais.setItems(paises);
         
-        //onSelectRow();
+        onSelectRow();
         
         table.focusedProperty().addListener((Observable observable) -> {
             if (table.getSelectionModel().isEmpty()) {

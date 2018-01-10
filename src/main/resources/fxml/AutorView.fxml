@@ -15,7 +15,7 @@
 <AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="980.0" styleClass="white" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.libreria.controllers.AutorController">
    <children>
       <Label fx:id="title" layoutX="14.0" layoutY="22.0" styleClass="title" text="Lista de Autores" />
-      <TableView fx:id="table" editable="true" layoutX="14.0" layoutY="98.0" onMousePressed="#onSelectRow" prefHeight="480.0" prefWidth="600.0">
+      <TableView fx:id="table" editable="true" layoutX="14.0" layoutY="98.0" prefHeight="480.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="nombresColumn" onEditCommit="#editCells" prefWidth="200.0" text="Nombres" />
             <TableColumn fx:id="apellidosColumn" onEditCommit="#editCells" prefWidth="200.0" text="Apellidos" />
@@ -29,28 +29,28 @@
          </styleClass>
          <children>
             <Label layoutX="10.0" layoutY="14.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nombres" />
-            <InputField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" onKeyReleased="#validateTextInputs" prefHeight="37.0" prefWidth="280.0">
+            <InputField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" onKeyPressed="#validate" prefHeight="37.0" prefWidth="280.0">
                <styleClass>
                   <String fx:value="white" />
                   <String fx:value="text-field" />
                </styleClass>
             </InputField>
             <Label layoutX="11.0" layoutY="107.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Apellidos" />
-            <InputField fx:id="txfApellidos" layoutX="11.0" layoutY="148.0" onKeyReleased="#validateTextInputs" prefHeight="37.0" prefWidth="280.0">
+            <InputField fx:id="txfApellidos" layoutX="11.0" layoutY="148.0" onKeyPressed="#validate" prefHeight="37.0" prefWidth="280.0">
                <styleClass>
                   <String fx:value="white" />
                   <String fx:value="text-field" />
                </styleClass>
             </InputField>
             <Label layoutX="11.0" layoutY="220.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nacionalidad" />
-            <Button fx:id="btnGuardar" disable="true" layoutX="14.0" layoutY="370.0" onAction="#save" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Guardar" />
-            <ComboBox fx:id="comboBoxPais" layoutX="10.0" layoutY="260.0" prefHeight="37.0" prefWidth="280.0" onAction="#validateSelect" promptText="Seleccione una opción" visibleRowCount="5">
+            <Button fx:id="btnGuardar" disable="true" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" onAction="#save" text="Guardar" />
+            <ComboBox fx:id="comboBoxPais" layoutX="10.0" layoutY="260.0" prefHeight="37.0" prefWidth="280.0" onAction="#validate" promptText="Seleccione una opción" visibleRowCount="5">
                <styleClass>
                   <String fx:value="combo-box" />
                   <String fx:value="white" />
                </styleClass>
             </ComboBox>
-            <Button fx:id="btnEliminar" disable="true" layoutX="115.0" layoutY="370.0" mnemonicParsing="false" onAction="#delete" prefHeight="37.0" prefWidth="71.0" text="Eliminar" />
+            <Button fx:id="btnEliminar" disable="true" layoutX="115.0" layoutY="370.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" onAction="#delete" text="Eliminar" />
             <Button fx:id="btnNuevo" layoutX="215.0" layoutY="370.0" mnemonicParsing="false" onAction="#resetForm" prefHeight="37.0" prefWidth="71.0" text="Nuevo" />
             <Label fx:id="messageNombres" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="87.0" prefHeight="17.0" prefWidth="280.0" styleClass="message-input" />
             <Label fx:id="messageApellidos" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="185.0" prefHeight="17.0" prefWidth="280.0" styleClass="message-input" />

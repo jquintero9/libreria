@@ -5,6 +5,8 @@ import com.libreria.models.Autor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AutorDAO extends DAO<Autor, Long> {
     
@@ -82,5 +84,19 @@ public class AutorDAO extends DAO<Autor, Long> {
         }
         
         return autor;
+    }
+
+    @Override
+    public void setPrimaryKeys(ResultSet keys, Autor autor) throws DBException {
+        
+        try {
+            
+            if (keys.next()) {
+                autor.setId(keys.getLong(1));
+                System.out.println(autor.getId());
+            } else throw new DBException("No se pudo extraer la llave primaria.");
+        } catch (SQLException ex) {
+            throw new DBException(ex.getMessage());
+        }
     }
 }

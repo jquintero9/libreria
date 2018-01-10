@@ -78,4 +78,9 @@ public class PaisDAO extends DAO<Pais, Long> {
             throw new DBException(DBException.FAIL_STM + " | " + ex.getMessage());
         }
     }
+
+    @Override
+    public void setPrimaryKeys(ResultSet keys, Pais pais) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

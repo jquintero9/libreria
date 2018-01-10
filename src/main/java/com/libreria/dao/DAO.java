@@ -20,15 +20,18 @@ public abstract class DAO<Model, K> {
     
     public void create(Model object) throws DBException {
         PreparedStatement stm = null;
+        ResultSet keys = null;
         
         try {
             ConnectionDB.connect();
-            stm = ConnectionDB.getConnection().prepareStatement(sentences.get("create"));
+            stm = ConnectionDB.getConnection().prepareStatement(sentences.get("create"), Statement.RETURN_GENERATED_KEYS);
             setCreateStatement(stm, object);
             
             if (stm.executeUpdate() == 0) {
                 throw new DBException("Ocurrio un error al insertar el registro.");
             }
+            
+            setPrimaryKeys(stm.getGeneratedKeys(), object);
         } catch (SQLException ex) {
             throw new DBException(DBException.FAIL_TRANSACTION);
         } finally {
@@ -164,4 +167,5 @@ public abstract class DAO<Model, K> {
     public abstract void setUpdateStatement(PreparedStatement stm, Model object) throws DBException;
     public abstract void setDeleteStatement(PreparedStatement stm, K pk) throws DBException;
     public abstract Model createObject(ResultSet result) throws DBException;
+    public abstract void setPrimaryKeys(ResultSet keys, Model object) throws DBException;
 }

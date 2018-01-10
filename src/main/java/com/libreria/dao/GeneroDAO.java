@@ -77,4 +77,9 @@ public class GeneroDAO extends DAO<Genero, Long> {
         
         return genero;
     }
+
+    @Override
+    public void setPrimaryKeys(ResultSet keys, Genero genero) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

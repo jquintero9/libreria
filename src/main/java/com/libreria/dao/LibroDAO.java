@@ -87,5 +87,10 @@ public class LibroDAO extends DAO<Libro, Long> {
         
         return libro;
     }
+
+    @Override
+    public void setPrimaryKeys(ResultSet keys, Libro libro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
