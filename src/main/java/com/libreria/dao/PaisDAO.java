@@ -80,7 +80,13 @@ public class PaisDAO extends DAO<Pais, Long> {
     }
 
     @Override
-    public void setPrimaryKeys(ResultSet keys, Pais pais) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setPrimaryKeys(ResultSet keys, Pais pais) throws DBException {
+        try {
+            if (keys.next()) {
+                pais.setId(keys.getLong("id"));
+            } else throw new DBException("No se pudo extraer la llave primaria.");
+        } catch (SQLException ex) {
+            throw new DBException(ex.getMessage());
+        }
     }
 }

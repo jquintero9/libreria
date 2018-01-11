@@ -29,14 +29,14 @@
          </styleClass>
          <children>
             <Label layoutX="10.0" layoutY="14.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Nombres" />
-            <InputField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" onKeyPressed="#validate" prefHeight="37.0" prefWidth="280.0">
+            <InputField fx:id="txfNombres" layoutX="10.0" layoutY="50.0" onKeyReleased="#validate" prefHeight="37.0" prefWidth="280.0">
                <styleClass>
                   <String fx:value="white" />
                   <String fx:value="text-field" />
                </styleClass>
             </InputField>
             <Label layoutX="11.0" layoutY="107.0" prefHeight="40.0" prefWidth="280.0" styleClass="label-form" text="Apellidos" />
-            <InputField fx:id="txfApellidos" layoutX="11.0" layoutY="148.0" onKeyPressed="#validate" prefHeight="37.0" prefWidth="280.0">
+            <InputField fx:id="txfApellidos" layoutX="11.0" layoutY="148.0" onKeyReleased="#validate" prefHeight="37.0" prefWidth="280.0">
                <styleClass>
                   <String fx:value="white" />
                   <String fx:value="text-field" />

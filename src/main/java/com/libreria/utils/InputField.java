@@ -70,6 +70,7 @@ public class InputField extends TextField {
     }
     
     public boolean isValid() {
+        System.out.println(getText().trim());
         return getText().trim().length() > 0;
     }
 }

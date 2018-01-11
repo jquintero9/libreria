@@ -5,15 +5,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
@@ -41,10 +38,6 @@ public class AppController implements Initializable {
     /* Este es el contenedor principal. */
     @FXML
     private BorderPane mainContainer;
-    
-    /* Escenas que serán visualizados según la opción del menú */
-    private Scene autorScene;
-    private Scene paisScene;
     
     /* Estas dos variables representan el estado del menú */
     private byte currentOption;

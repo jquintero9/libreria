@@ -121,6 +121,7 @@ public class AutorController implements Initializable {
     private void reset() {
         txfNombres.setText("");
         messageNombres.setText("");
+        messageApellidos.setText("");
         txfApellidos.setText("");
         comboBoxPais.setValue(null);
     }

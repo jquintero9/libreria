@@ -25,7 +25,7 @@ public abstract class Controller<Model> {
     
     protected void onSelectRow() {
         table.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Model> observable, Model oldValue, Model newValue) -> {
-            btnSave.setDisable(false);
+            btnDelete.setDisable(false);
         });
     }
     
