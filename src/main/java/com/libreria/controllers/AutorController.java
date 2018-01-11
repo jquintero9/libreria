@@ -111,12 +111,6 @@ public class AutorController implements Initializable {
     }
     
     @FXML
-    private void onSelectRow(MouseEvent ev) {
-        System.out.println("click table...");
-        btnEliminar.setDisable(false);
-    }
-    
-    @FXML
     private void validate() {
          if (txfNombres.isValid() && txfApellidos.isValid() && comboBoxPais.getValue() != null) {
             btnGuardar.setDisable(false);
@@ -124,10 +118,6 @@ public class AutorController implements Initializable {
     }
     
     @FXML
-    private void resetForm() {
-        reset();
-    }
-    
     private void reset() {
         txfNombres.setText("");
         messageNombres.setText("");
@@ -251,13 +241,6 @@ public class AutorController implements Initializable {
         comboBoxPais.setItems(paises);
         
         onSelectRow();
-        
-        table.focusedProperty().addListener((Observable observable) -> {
-            if (table.getSelectionModel().isEmpty()) {
-                btnEliminar.setDisable(true);
-            }
-            System.out.println("foused...");
-        });
         
         table.setItems(data);
     }

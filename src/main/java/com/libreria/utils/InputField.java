@@ -50,7 +50,6 @@ public class InputField extends TextField {
     }
     
     private boolean validateLength(String value) {
-        System.out.println(getText().length());
         return getText().length() < maxLength || value.equals("");
     }
     

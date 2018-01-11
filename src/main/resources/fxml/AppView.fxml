@@ -21,17 +21,11 @@
             </ImageView>
             <VBox fx:id="menu" layoutY="163.0" prefHeight="476.0" prefWidth="300.0" styleClass="white">
                <children>
-                  <Label fx:id="lbInicio" onMouseClicked="#onClickMenu" text="Home">
-                     <styleClass>
-                        <String fx:value="btn-menu" />
-                        <String fx:value="white" />
-                        <String fx:value="active" />
-                     </styleClass>
-                  </Label>
                   <Label fx:id="lbAutores" onMouseClicked="#onClickMenu" text="Autores">
                      <styleClass>
                         <String fx:value="btn-menu" />
                         <String fx:value="white" />
+                        <String fx:value="active" />
                      </styleClass>
                   </Label>
                   <Label fx:id="lbPaises" onMouseClicked="#onClickMenu" text="Paises">

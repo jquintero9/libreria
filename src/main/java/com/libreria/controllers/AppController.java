@@ -15,20 +15,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
 public class AppController implements Initializable {
     
     /* Estas constantes representan las opciones del menú. */
-    private final byte INICIO = 0;
-    private final byte AUTORES = 1;
-    private final byte PAISES = 2;
-    private final byte GENEROS = 3;
-    private final byte LIBROS = 4;
+    private final byte AUTORES = 0;
+    private final byte PAISES = 1;
+    private final byte GENEROS = 2;
+    private final byte LIBROS = 3;
     
     /* Estos nodos representan los botones del menú. */
-    @FXML
-    private Label lbInicio;
-    
     @FXML
     private Label lbAutores;
     
@@ -60,7 +55,6 @@ public class AppController implements Initializable {
         try {
             /* Se inicializa el contenedor y se agregan los botones. */
             buttonsMenu = new ArrayList();
-            buttonsMenu.add(lbInicio);
             buttonsMenu.add(lbAutores);
             buttonsMenu.add(lbPaises);
             buttonsMenu.add(lbGeneros);
@@ -102,11 +96,7 @@ public class AppController implements Initializable {
     private void onClickMenu(MouseEvent ev) {
         prevOption = currentOption;
         
-        if (ev.getSource() == lbInicio) {
-            if (currentOption != INICIO) {
-                currentOption = INICIO;
-            }
-        } else if (ev.getSource() == lbAutores) {
+        if (ev.getSource() == lbAutores) {
             if (currentOption != AUTORES) {
                 currentOption = AUTORES;
             }
@@ -127,5 +117,4 @@ public class AppController implements Initializable {
         if (prevOption != currentOption)
             selectOption();
     }
-    
 }
